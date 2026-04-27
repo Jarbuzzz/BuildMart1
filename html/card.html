@@ -50,7 +50,7 @@
               <div class="card-page__hero">
                 <img
                   id="card-gallery-main"
-                  class="card-page__hero-img"
+                  class="card-page__hero-img card-page__hero-img--fade"
                   src="../images/photo1.jpg"
                   width="584"
                   height="584"
@@ -135,19 +135,28 @@
                 </div>
               </div>
               <div class="card-page__actions">
-                <button type="button" class="card-page__btn card-page__btn--primary">
+                <button type="button" class="card-page__btn card-page__btn--primary" aria-label="Add to cart">
                   <svg width="20" height="20" aria-hidden="true"><use href="../assets/icons.svg#sym-cart"></use></svg>
-                  Add to Cart
+                  <span id="card-primary-label">Add to Cart</span>
                 </button>
                 <button type="button" class="card-page__btn card-page__btn--secondary">Buy Now</button>
               </div>
               <div class="card-page__description-block">
                 <h2 class="card-page__section-heading">Description</h2>
-                <p class="card-page__section-text">
-                  Professional-grade exterior paint set designed to withstand harsh weather conditions. This premium paint offers excellent coverage, durability, and color retention. Perfect for residential and commercial exterior surfaces.
-                </p>
+                <p class="card-page__section-text card-page__section-text--lead" id="card-desc-lead"></p>
               </div>
               <div class="card-page__accordion-wrap">
+                <details class="card-page__accordion">
+                  <summary class="card-page__accordion-summary">
+                    Расширенное описание
+                    <svg class="card-page__accordion-chevron" width="16" height="16" aria-hidden="true"><use href="../assets/icons.svg#sym-chevron-down"></use></svg>
+                  </summary>
+                  <div class="card-page__accordion-body">
+                    <p class="card-page__section-text" id="card-extended-desc"></p>
+                  </div>
+                </details>
+              </div>
+              <div class="card-page__accordion-wrap card-page__accordion-wrap--specs">
                 <details class="card-page__accordion">
                   <summary class="card-page__accordion-summary">
                     Technical Specifications
