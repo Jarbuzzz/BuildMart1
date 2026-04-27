@@ -37,6 +37,9 @@ const getCardTitle = (card) =>
 const compareCardsForSort = (a, b, mode) => {
   if (mode === "price-asc") return getCardPrice(a) - getCardPrice(b);
   if (mode === "price-desc") return getCardPrice(b) - getCardPrice(a);
+  if (mode === "name-desc") {
+    return getCardTitle(b).localeCompare(getCardTitle(a), undefined, { sensitivity: "base" });
+  }
   return getCardTitle(a).localeCompare(getCardTitle(b), undefined, { sensitivity: "base" });
 };
 
