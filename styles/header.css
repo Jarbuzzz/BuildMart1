@@ -1,0 +1,497 @@
+.header {
+  width: 100%;
+  height: 81px;
+  margin: 0;
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--line, #e4e7ec);
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.header__container {
+  width: 100%;
+  max-width: 1280px;
+  height: 80px;
+  margin-inline: auto;
+  padding-inline: 16px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  /* <768px — flex + gap; от 768px — grid с равным column-gap в медиазапросе ниже */
+  justify-content: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .header__container {
+    padding-inline: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__container {
+    padding-inline: 32px;
+  }
+}
+
+.header__search-field {
+  width: 448px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  border: 1px solid #d1d5dc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  transition: border-color 0.2s ease, border-width 0.2s ease;
+}
+
+.header__search-field:focus-within {
+  border: 3px solid #ff5a00;
+  box-shadow: none;
+}
+
+.header__action-link {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
+  text-decoration: none;
+  flex-shrink: 0;
+  color: #4b5563;
+  transition: color 0.2s ease;
+}
+
+.header__cart-icon {
+  width: 20px;
+  height: 20px;
+  color: currentColor;
+  display: block;
+  flex-shrink: 0;
+}
+
+.header__cart-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  box-sizing: border-box;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background-color: #ea580c;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.header__cart-badge[hidden] {
+  display: none !important;
+}
+
+.header__action-link:hover {
+  color: #ff5a00;
+}
+
+.header__search-icon {
+  width: 20px;
+  height: 20px;
+  color: #99a1af;
+  display: block;
+  flex-shrink: 0;
+}
+
+.header__search-input {
+  flex: 1;
+  min-width: 0;
+  height: 19px;
+  border: none;
+  outline: none;
+  padding: 0;
+  color: rgba(10, 10, 10, 0.5);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.31px;
+  background: transparent;
+}
+
+.header__search-input::placeholder {
+  width: 133px;
+  height: 19px;
+  color: rgba(10, 10, 10, 0.5);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.31px;
+}
+
+.header__link {
+  width: auto;
+  min-width: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header__link-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #f54900;
+  flex-shrink: 0;
+}
+
+.header__link-text {
+  width: 32px;
+  height: 28px;
+  display: block;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.45px;
+}
+
+.header__link-label {
+  width: auto;
+  height: 28px;
+  display: block;
+  color: #101828;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.45px;
+}
+
+.header__navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: auto;
+  height: 24px;
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+.header__navigation-link {
+  width: auto;
+  height: 24px;
+  display: block;
+  position: relative;
+  top: -0.5px;
+  color: #364153;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.31px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header__navigation-link:hover {
+  color: #ff5a00;
+}
+
+.header__navigation-link--categories {
+  width: 80px;
+}
+
+.header__navigation-link--deals {
+  width: 41px;
+}
+
+.header__navigation-link--about {
+  width: 45px;
+}
+
+/* —— Mobile / tablet / desktop (375px … 1440px+) —— */
+.header__toolbar-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.header__icon-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #4b5563;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.header__icon-btn:hover {
+  background: #f9fafb;
+  color: #ff5a00;
+}
+
+.header__icon-btn-svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/* Декоративная «лупа» в мобильной строке: не кнопка, без hover/tap */
+.header__search-decoy {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  color: #4b5563;
+  box-sizing: border-box;
+}
+
+.header__search-decoy-svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.header__icon-btn.header__menu-toggle {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header__icon-btn.header__menu-toggle:hover,
+.header__icon-btn.header__menu-toggle:active {
+  background-color: transparent !important;
+  color: #4b5563;
+}
+
+.header__icon-btn.header__menu-toggle:focus {
+  outline: none;
+}
+
+.header__icon-btn.header__menu-toggle:focus-visible {
+  outline: 2px solid #ff5a00;
+  outline-offset: 2px;
+}
+
+.header__mobile-panel {
+  display: none;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  box-sizing: border-box;
+  padding: 0 16px;
+  border-bottom: 1px solid transparent;
+  background: #ffffff;
+}
+
+/* Разделитель между строкой хедера и полем поиска (отдельно от поля) */
+.header__mobile-panel::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: calc(100% + 32px);
+  margin: 0 -16px 12px;
+  background-color: var(--line, #e4e7ec);
+  box-sizing: border-box;
+}
+
+.header__search-field--panel {
+  width: 100%;
+  max-width: none;
+  height: 48px;
+  margin: 0 0 12px;
+  box-sizing: border-box;
+}
+
+.header__navigation--panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  height: auto;
+  gap: 18px;
+  margin: 0;
+  padding: 8px 0 4px;
+}
+
+.header__navigation--panel .header__navigation-link {
+  width: 100%;
+  padding: 8px 0;
+  border-bottom: none;
+  font-size: 17px;
+  box-sizing: border-box;
+}
+
+.header__navigation--panel .header__navigation-link--categories,
+.header__navigation--panel .header__navigation-link--deals,
+.header__navigation--panel .header__navigation-link--about {
+  width: 100%;
+}
+
+/* Mobile: < 768px — sheet in document flow (pushes main); search + links in panel */
+@media (max-width: 767px) {
+  .header {
+    height: auto;
+    min-height: 72px;
+  }
+
+  .header__container {
+    height: 71px;
+    min-height: 71px;
+    gap: 12px;
+  }
+
+  /* Логотип слева, лупа + корзина + меню справа (nav/search скрыты из потока) */
+  .header__toolbar-end {
+    margin-left: auto;
+  }
+
+  .header__link-label {
+    display: none;
+  }
+
+  .header__link {
+    width: auto;
+    min-width: 0;
+  }
+
+  .header__container > .header__navigation {
+    display: none;
+  }
+
+  .header__container > .header__search-field {
+    display: none;
+  }
+
+  .header__mobile-panel {
+    display: none;
+  }
+
+  .header.header--nav-open .header__mobile-panel {
+    display: block;
+    max-height: min(420px, calc(100dvh - 72px - 12px));
+    overflow: auto;
+    padding-bottom: 16px;
+    border-bottom-color: var(--line, #e4e7ec);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .header__icon-btn {
+    display: inline-flex;
+  }
+
+  .header__search-decoy {
+    display: inline-flex;
+  }
+
+  .header__menu-toggle {
+    display: inline-flex;
+  }
+}
+
+/* Tablet+ (768px …): 4 колонки — логотип | nav | поиск | тулбар;
+   равный column-gap не схлопывается на узкой ширине (в отличие от space-between) */
+@media (min-width: 768px) {
+  .header__container {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr) auto;
+    column-gap: clamp(14px, 2.4vw, 24px);
+    row-gap: 0;
+    align-items: center;
+    justify-content: normal;
+  }
+
+  .header__search-decoy,
+  .header__menu-toggle {
+    display: none;
+  }
+
+  .header__search-field {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: 42px;
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    pointer-events: auto;
+    transform: none;
+    justify-self: start;
+    min-width: 0;
+    max-width: min(448px, 100%);
+    box-sizing: border-box;
+  }
+}
+
+/* Только ≥1440px: средняя дорожка по ширине поля (max-content), не 1fr — синий контейнер поиска не растягивается;
+   свободное место уходит в space-between между четырьмя колонками вместе с column-gap */
+@media (min-width: 1440px) {
+  .header__container {
+    grid-template-columns: auto auto max-content auto;
+    justify-content: space-between;
+  }
+
+  .header__search-field {
+    width: 448px;
+    max-width: 100%;
+    justify-self: auto;
+  }
+}
+
+/* Планшет 768–1023px: только значок BM, без текста BuildMart */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header__link-label {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__link-label {
+    display: block;
+  }
+}
