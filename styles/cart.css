@@ -3,7 +3,14 @@
   width: 100%;
   max-width: min(1280px, 100%);
   margin-inline: auto;
-  padding: 32px max(16px, env(safe-area-inset-right, 0px)) 48px max(16px, env(safe-area-inset-left, 0px));
+  /* Override .screen__content flex defaults: min-height:0 + flex-basis can collapse this column to 0px tall on mobile Safari */
+  flex: 1 1 auto;
+  min-height: auto;
+  min-width: 0;
+  padding-top: 32px;
+  padding-bottom: 48px;
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
 }
 
 @media (min-width: 640px) {
@@ -314,7 +321,8 @@
   gap: 32px;
   width: 100%;
   max-width: 1216px;
-  min-height: 156px;
+  min-width: 0;
+  min-height: min-content;
   margin-inline: auto;
 }
 

@@ -7,6 +7,9 @@
 .screen__content.card-page {
   max-width: min(1280px, 100%);
   margin-inline: auto;
+  flex: 1 1 auto;
+  min-height: auto;
+  min-width: 0;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   box-sizing: border-box;

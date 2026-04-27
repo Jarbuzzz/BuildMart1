@@ -40,7 +40,15 @@
   }
 
   function renderCart() {
-    if (!emptyState || !filledState || !listEl || !cart) return;
+    if (!emptyState || !filledState || !listEl) return;
+
+    if (!cart || typeof cart.read !== "function") {
+      root.classList.remove("cart-page--has-items");
+      emptyState.hidden = false;
+      filledState.hidden = true;
+      document.title = "Cart - BuildMart";
+      return;
+    }
 
     var lines = cart.read();
     if (!lines.length) {
