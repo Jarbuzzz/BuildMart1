@@ -6,9 +6,10 @@ html {
   overflow-x: hidden;
 }
 
-body {
-  overflow-x: hidden;
-  min-width: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .flex {
@@ -57,6 +58,8 @@ body {
 body {
   margin: 0;
   min-height: 100vh;
+  min-width: 0;
+  overflow-x: hidden;
   background: #ffffff;
 }
 
@@ -69,12 +72,19 @@ body {
   background: #ffffff;
 }
 
+.screen > .header {
+  min-width: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
 .screen__content {
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
   width: 100%;
   max-width: min(100%, 1440px);
+  min-width: 0;
   min-height: 0;
   margin-inline: auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));

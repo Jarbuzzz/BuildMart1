@@ -1,5 +1,7 @@
 .header {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   height: 81px;
   margin: 0;
   padding: 0;
@@ -14,6 +16,7 @@
 .header__container {
   width: 100%;
   max-width: min(1280px, 100%);
+  min-width: 0;
   height: 80px;
   margin-inline: auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
@@ -24,7 +27,6 @@
   /* <768px — flex + gap; от 768px — grid с равным column-gap в медиазапросе ниже */
   justify-content: flex-start;
   gap: 16px;
-  min-width: 0;
 }
 
 @media (min-width: 640px) {
@@ -384,14 +386,33 @@
   .header__container {
     height: 71px;
     min-height: 71px;
-    gap: 12px;
-    padding-left: max(12px, env(safe-area-inset-left, 0px));
-    padding-right: max(12px, env(safe-area-inset-right, 0px));
+    gap: 8px;
+    padding-left: max(10px, env(safe-area-inset-left, 0px));
+    padding-right: max(10px, env(safe-area-inset-right, 0px));
   }
 
   /* Логотип слева, лупа + корзина + меню справа (nav/search скрыты из потока) */
   .header__toolbar-end {
     margin-left: auto;
+    flex-shrink: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2px;
+  }
+
+  .header__search-decoy,
+  .header__icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header__action-link {
+    width: 34px;
+    height: 34px;
+    padding: 6px;
+    flex-shrink: 0;
   }
 
   .header__link-label {
