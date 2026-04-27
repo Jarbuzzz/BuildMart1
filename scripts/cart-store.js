@@ -88,5 +88,15 @@
         return sum + (parseInt(line.qty, 10) || 0);
       }, 0);
     },
+    qtyForProduct: function (id) {
+      if (!id) return 0;
+      var lines = readRaw();
+      for (var i = 0; i < lines.length; i++) {
+        if (lines[i].id === id) {
+          return Math.max(0, parseInt(lines[i].qty, 10) || 0);
+        }
+      }
+      return 0;
+    },
   };
 })();
