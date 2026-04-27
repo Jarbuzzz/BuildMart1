@@ -65,7 +65,7 @@ body {
   flex-direction: column;
   flex: 1 0 auto;
   width: 100%;
-  max-width: 1280px;
+  max-width: min(100%, 1440px);
   min-height: 0;
   margin-inline: auto;
   padding-inline: 16px;
@@ -81,6 +81,12 @@ body {
 @media (min-width: 1024px) {
   .screen__content {
     padding-inline: 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .screen__content {
+    padding-inline: 40px;
   }
 }
 
