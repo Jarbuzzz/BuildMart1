@@ -1,7 +1,6 @@
 .catalog {
   position: relative;
   width: 100%;
-  white-space: nowrap;
   box-sizing: border-box;
 }
 
@@ -941,6 +940,16 @@
     max-width: 100%;
   }
 
+  .catalog__filters-column--rating .catalog__filters-heading {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .catalog__filters-heading-text {
+    min-width: 0;
+    white-space: normal;
+  }
+
   .catalog__filters-track {
     width: 100%;
     max-width: 100%;
@@ -977,6 +986,48 @@
   .catalog__container-tertiary {
     margin-left: 0;
     justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .catalog__sort {
+    flex-wrap: wrap;
+    width: 100%;
+    row-gap: 8px;
+  }
+
+  .catalog__sort-label {
+    flex: 0 0 100%;
+  }
+
+  .catalog__dropdown {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .catalog__button {
+    width: auto;
+    min-width: 0;
+    max-width: 100%;
+    flex: 0 1 auto;
+  }
+
+  .catalog__filters-clear-wrap {
+    margin-left: 0;
+    width: 100%;
+    justify-content: stretch;
+    align-self: stretch;
+  }
+
+  .catalog__filters-clear {
+    width: 100%;
+    max-width: none;
+  }
+
+  .catalog__filters-panel {
+    padding-left: max(12px, env(safe-area-inset-left, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px));
   }
 }
 

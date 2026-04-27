@@ -13,10 +13,11 @@
 
 .header__container {
   width: 100%;
-  max-width: 1280px;
+  max-width: min(1280px, 100%);
   height: 80px;
   margin-inline: auto;
-  padding-inline: 16px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -28,13 +29,15 @@
 
 @media (min-width: 640px) {
   .header__container {
-    padding-inline: 24px;
+    padding-left: max(24px, env(safe-area-inset-left, 0px));
+    padding-right: max(24px, env(safe-area-inset-right, 0px));
   }
 }
 
 @media (min-width: 1024px) {
   .header__container {
-    padding-inline: 32px;
+    padding-left: max(32px, env(safe-area-inset-left, 0px));
+    padding-right: max(32px, env(safe-area-inset-right, 0px));
   }
 }
 
@@ -318,10 +321,10 @@
 .header__mobile-panel {
   display: none;
   width: 100%;
-  max-width: 1280px;
+  max-width: min(1280px, 100%);
   margin-inline: auto;
   box-sizing: border-box;
-  padding: 0 16px;
+  padding: 0 max(16px, env(safe-area-inset-left)) 0 max(16px, env(safe-area-inset-right));
   border-bottom: 1px solid transparent;
   background: #ffffff;
 }
@@ -382,6 +385,8 @@
     height: 71px;
     min-height: 71px;
     gap: 12px;
+    padding-left: max(12px, env(safe-area-inset-left, 0px));
+    padding-right: max(12px, env(safe-area-inset-right, 0px));
   }
 
   /* Логотип слева, лупа + корзина + меню справа (nav/search скрыты из потока) */
